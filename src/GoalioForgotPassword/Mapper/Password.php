@@ -50,6 +50,13 @@ class Password extends AbstractDbMapper
         return true;
     }
 
+	public function findByUserIdRequestKey($userId, $token)
+	{
+		$select = $this->getSelect()
+                       ->where(array($this->userField => $userId, $this->keyField => $token));
+        return $this->select($select)->current();
+	}
+
     protected function fromRow($row)
     {
         if (!$row) return false;
