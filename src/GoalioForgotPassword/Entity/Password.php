@@ -54,10 +54,4 @@ class Password
         }
         return $this->requestTime;
     }
-
-    public function isExpired($resetExpire)
-    {
-        $expiryDate = new \DateTime($resetExpire . ' seconds ago');
-        return $this->getRequestTime() < $expiryDate;
-    }
 }
