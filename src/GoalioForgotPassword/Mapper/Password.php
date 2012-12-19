@@ -50,6 +50,16 @@ class Password extends AbstractDbMapper
         return true;
     }
 
+    public function cleanPriorForgotRequests($userId)
+    {
+        $sql = new Sql($this->getDbAdapter(), $this->tableName);
+        $delete = $sql->delete();
+        $delete ->where->equalTo($this->userField, $userId);
+        $statement = $sql->prepareStatementForSqlObject($delete);
+        $statement->execute();
+        return true;
+    }
+
 	public function findByUserIdRequestKey($userId, $token)
 	{
 		$select = $this->getSelect()
