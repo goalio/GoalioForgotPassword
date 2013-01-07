@@ -14,6 +14,7 @@ Requirements
 * [Zend Framework 2](https://github.com/zendframework/zf2) (latest master).
 * [ZfcBase](https://github.com/ZF-Commons/ZfcBase) (latest master).
 * [ZfcUser](https://github.com/ZF-Commons/ZfcUser) (latest master).
+* [GoalioMailService](https://github.com/goalio/GoalioMailService) (latest master).
 
 Features / Goals
 ----------------
@@ -62,6 +63,8 @@ Installation
     ```
 
 2. Then Import the SQL schema located in `./vendor/goalio/goalio-rememberme/data/schema.sql`.
+
+3. Make sure that the MailService is configured correctly.
 
 ### Post-Install: Zend\Db
 
