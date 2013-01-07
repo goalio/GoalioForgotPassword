@@ -80,7 +80,7 @@ class ForgotController extends AbstractActionController
                 $user = $userService->getUserMapper()->findByEmail($email);
 
                 //only send request when email is found
-                if($user !== null) {
+                if($user != null) {
                     $service->sendProcessForgotRequest($user->getId(), $email);
                 }
 

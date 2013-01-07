@@ -41,7 +41,7 @@ class Reset extends ProvidesEventsForm
 
         $submitElement = new Element\Button('submit');
         $submitElement
-            ->setLabel('Request new password')
+            ->setLabel('Set new password')
             ->setAttributes(array(
                 'type'  => 'submit',
             ));
