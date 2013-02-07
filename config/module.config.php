@@ -13,14 +13,6 @@ return array(
             'goalioforgotpassword_forgot' => 'GoalioForgotPassword\Controller\ForgotController',
         ),
     ),
-    'controller_plugins' => array(
-        'invokables' => array(
-        ),
-    ),
-    'service_manager' => array(
-        'aliases' => array(
-        ),
-    ),
     'router' => array(
         'routes' => array(
             'zfcuser' => array(
