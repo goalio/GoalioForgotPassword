@@ -115,7 +115,7 @@ class ForgotController extends AbstractActionController
         $password = $service->getPasswordMapper()->findByUserIdRequestKey($userId, $token);
 
         //no request for a new password found
-        if($password === null) {
+        if($password === null || $password == false) {
             return $this->redirect()->toRoute('zfcuser/forgotpassword');
         }
 
