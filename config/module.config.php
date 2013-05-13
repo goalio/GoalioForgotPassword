@@ -36,7 +36,7 @@ return array(
                                 'action'     => 'reset',
                             ),
                             'constraints' => array(
-                                'userId'  => '[0-9]+',
+                                'userId'  => '[A-Fa-f0-9]+',
                                 'token' => '[A-F0-9]+',
                             ),
                         ),
