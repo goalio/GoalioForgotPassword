@@ -19,7 +19,7 @@ $form->setAttribute('method', 'post');
         <dd><?php echo $this->formInput($form->get('credential')) ?></dd>
 
         <?php if ($this->redirect): ?>
-            <input type="hidden" name="redirect" value="<?php echo $this->redirect ?>" />
+            <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
         <?php endif ?>
 
         <dd><?php echo $this->formButton($form->get('submit')) ?></dd>
@@ -30,6 +30,6 @@ $form->setAttribute('method', 'post');
 <p><a href="<?php echo $this->url('zfcuser/forgotpassword') ?>">Forgot your password?</a></p>
 
 <?php if ($this->enableRegistration) : ?>
-<p>Not registered? <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>">Sign up!</a></p>
+Not registered? <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>">Sign up!</a>
 <?php endif; ?>
 
