@@ -10,4 +10,6 @@ interface ForgotOptionsInterface
     public function getEmailFromAddress();
     public function setResetEmailSubjectLine($subject);
     public function getResetEmailSubjectLine();
+    public function setResetEmailTemplate($template);
+    public function getResetEmailTemplate();
 }
