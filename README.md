@@ -62,7 +62,7 @@ Installation
     );
     ```
 
-2. Then Import the SQL schema located in `./vendor/goalio/goalio-rememberme/data/schema.sql`.
+2. Then Import the SQL schema located in `./vendor/goalio/goalio-forgotpassword/data/schema.sql`.
 
 3. Make sure that the MailService is configured correctly.
 
