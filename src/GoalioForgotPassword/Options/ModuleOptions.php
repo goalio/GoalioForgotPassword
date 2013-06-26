@@ -20,6 +20,11 @@ class ModuleOptions extends AbstractOptions implements
     /**
      * @var string
      */
+    protected $resetEmailTemplate = 'goalio-forgot-password/email/forgot';
+
+    /**
+     * @var string
+     */
     protected $emailTransport = 'Zend\Mail\Transport\Sendmail';
 
     /**
@@ -41,6 +46,10 @@ class ModuleOptions extends AbstractOptions implements
         return $this->resetEmailSubjectLine;
     }
 
+	public function getResetEmailTemplate() {
+        return $this->resetEmailTemplate;
+    }
+
 	public function getEmailTransport() {
         return $this->emailTransport;
     }
@@ -52,6 +61,11 @@ class ModuleOptions extends AbstractOptions implements
 
 	public function setResetEmailSubjectLine($resetEmailSubjectLine) {
         $this->resetEmailSubjectLine = $resetEmailSubjectLine;
+        return $this;
+    }
+
+	public function setResetEmailTemplate($resetEmailTemplate) {
+        $this->resetEmailTemplate = $resetEmailTemplate;
         return $this;
     }
 
