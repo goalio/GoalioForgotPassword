@@ -36,6 +36,11 @@ class ModuleOptions extends AbstractOptions implements
      * @var int
      */
     protected $resetExpire = 86400;
+    
+    /**
+     * @var bool
+     */
+    protected $validateExistingRecord = false;
 
 
     public function getEmailFromAddress() {
@@ -52,6 +57,10 @@ class ModuleOptions extends AbstractOptions implements
 
 	public function getEmailTransport() {
         return $this->emailTransport;
+    }
+    
+    public function getValidateExistingRecord() {
+        return $this->validateExistingRecord;
     }
 
 	public function setEmailFromAddress($emailFromAddress) {
@@ -71,6 +80,11 @@ class ModuleOptions extends AbstractOptions implements
 
 	public function setEmailTransport($emailTransport) {
         $this->emailTransport = $emailTransport;
+        return $this;
+    }
+    
+    public function setValidateExistingRecord($validateExistingRecord) {
+        $this->validateExistingRecord = $validateExistingRecord;
         return $this;
     }
 
