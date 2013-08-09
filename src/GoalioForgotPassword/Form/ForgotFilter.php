@@ -23,10 +23,18 @@ class ForgotFilter extends InputFilter
             'validators' => array(
                 array(
                     'name' => 'EmailAddress'
-                ),
-                $this->emailValidator
+                )
             ),
         ));
+
+        if($this->options->getValidateExistingRecord()){
+            $this->add(array(
+	            'name'       => 'email',
+	            'validators' => array(
+	            	$this->emailValidator
+	            ),
+	        ));
+        }
     }
 
     /**
