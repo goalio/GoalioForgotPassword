@@ -12,9 +12,10 @@ class ForgotFilter extends InputFilter
      */
     protected $options;
 
-    public function __construct( ForgotOptionsInterface $options)
+    public function __construct( $emailValidator, ForgotOptionsInterface $options)
     {
         $this->setOptions($options);
+        $this->emailValidator = $emailValidator;
 
         $this->add(array(
             'name'       => 'email',
@@ -22,9 +23,18 @@ class ForgotFilter extends InputFilter
             'validators' => array(
                 array(
                     'name' => 'EmailAddress'
-                ),
+                )
             ),
         ));
+
+        if($this->options->getValidateExistingRecord()){
+            $this->add(array(
+	            'name'       => 'email',
+	            'validators' => array(
+	            	$this->emailValidator
+	            ),
+	        ));
+        }
     }
 
     /**
