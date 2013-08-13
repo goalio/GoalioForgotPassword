@@ -108,6 +108,10 @@ class ForgotController extends AbstractActionController
 
     public function resetAction()
     {
+        if ($this->zfcUserAuthentication()->hasIdentity()) {
+            return $this->redirect()->toRoute('zfcuser');
+        }
+
         $service = $this->getPasswordService();
         $service->cleanExpiredForgotRequests();
 
@@ -132,7 +136,7 @@ class ForgotController extends AbstractActionController
             $form->setData($this->getRequest()->getPost());
             if ( $form->isValid() && $user !== null )
             {
-                $service->resetPassword($password, $user, $form->getData());
+                $service->resetPassword($passwordRequest, $user, $form->getData());
 
                 $vm = new ViewModel(array('email' => $user->getEmail()));
                 $vm->setTemplate('goalio-forgot-password/forgot/passwordchanged');
