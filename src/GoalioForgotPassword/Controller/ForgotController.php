@@ -50,6 +50,11 @@ class ForgotController extends AbstractActionController
     protected $options;
 
     /**
+     * @var PasswordOptionsInterface
+     */
+    protected $zfcUserOptions;
+
+    /**
      * User page
      */
     public function indexAction()
@@ -112,10 +117,10 @@ class ForgotController extends AbstractActionController
         $userId    = $this->params()->fromRoute('userId', null);
         $token     = $this->params()->fromRoute('token', null);
 
-        $password = $service->getPasswordMapper()->findByUserIdRequestKey($userId, $token);
+        $passwordRequest = $service->getPasswordMapper()->findByUserIdRequestKey($userId, $token);
 
         //no request for a new password found
-        if($password === null || $password == false) {
+        if($passwordRequest === null || $passwordRequest == false) {
             return $this->redirect()->toRoute('zfcuser/forgotpassword');
         }
 
@@ -225,5 +230,13 @@ class ForgotController extends AbstractActionController
             $this->setOptions($this->getServiceLocator()->get('goalioforgotpassword_module_options'));
         }
         return $this->options;
+    }
+
+    public function getZfcUserOptions()
+    {
+        if (!$this->zfcUserOptions instanceof PasswordOptionsInterface) {
+            $this->zfcUserOptions = $this->getServiceLocator()->get('zfcuser_module_options');
+        }
+        return $this->zfcUserOptions;
     }
 }
