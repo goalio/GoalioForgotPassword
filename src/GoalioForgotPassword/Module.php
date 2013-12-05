@@ -3,6 +3,7 @@ namespace GoalioForgotPassword;
 
 use Zend\Loader\StandardAutoloader;
 use Zend\Loader\AutoloaderFactory;
+use Zend\Mvc\ModuleRouteListener;
 
 class Module {
 
@@ -14,6 +15,13 @@ class Module {
                 ),
             ),
         );
+    }
+
+    public function onBootstrap($e) {
+        $translator = $e->getApplication()->getServiceManager()->get('translator');
+        $translator
+          ->setLocale(\Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']))
+          ->setFallbackLocale('en_US');
     }
 
     public function getConfig() {

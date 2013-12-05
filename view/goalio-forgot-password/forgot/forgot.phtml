@@ -1,4 +1,4 @@
-<h1>Forgot your password?</h1>
+<h1><?php echo $this->translate('Forgot your password?'); ?></h1>
 
 <?php
 $form = $this->forgotForm;
@@ -20,4 +20,4 @@ $form->setAttribute('method', 'post');
 
 <?php echo $this->form()->closeTag() ?>
 
-<a href="<?php echo $this->url('zfcuser/login') ?>">Back to login?</a>
+<a href="<?php echo $this->url('zfcuser/login') ?>"><?php echo $this->translate('Back to login.'); ?></a>

@@ -21,13 +21,13 @@ class Forgot extends ProvidesEventsForm
         $this->add(array(
             'name' => 'email',
             'options' => array(
-                'label' => 'E-Mail',
+                'label' => _('E-Mail'),
             ),
         ));
 
         $submitElement = new Element\Button('submit');
         $submitElement
-            ->setLabel('Request new password')
+            ->setLabel(_('Request new password'))
             ->setAttributes(array(
                 'type'  => 'submit',
             ));
