@@ -22,7 +22,7 @@ class Reset extends ProvidesEventsForm
         $this->add(array(
             'name' => 'newCredential',
             'options' => array(
-                'label' => _('New Password'),
+                'label' => 'New Password',
             ),
             'attributes' => array(
                 'type' => 'password',
@@ -32,7 +32,7 @@ class Reset extends ProvidesEventsForm
         $this->add(array(
             'name' => 'newCredentialVerify',
             'options' => array(
-                'label' => _('Verify New Password'),
+                'label' => 'Verify New Password',
             ),
             'attributes' => array(
                 'type' => 'password',
@@ -41,7 +41,7 @@ class Reset extends ProvidesEventsForm
 
         $submitElement = new Element\Button('submit');
         $submitElement
-            ->setLabel(_('Set new password'))
+            ->setLabel('Set new password')
             ->setAttributes(array(
                 'type'  => 'submit',
             ));
