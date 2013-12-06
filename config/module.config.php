@@ -11,6 +11,9 @@ return array(
         ),
     ),
     'translator' => array(
+	// Change you locale here if needed, and uncomment line below with 'locale' setting. 
+	// Don't forget to create your own translation! See ../language directory.
+	// 'locale' => 'en_US', 
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
