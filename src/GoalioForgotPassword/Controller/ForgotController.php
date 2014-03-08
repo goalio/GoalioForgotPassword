@@ -81,7 +81,8 @@ class ForgotController extends AbstractActionController
             {
                 $userService = $this->getUserService();
 
-                $email = $this->getRequest()->getPost()->get('email');
+                //$email = $this->getRequest()->getPost()->get('email');
+                $email = $form->get('email')->getValue();
                 $user = $userService->getUserMapper()->findByEmail($email);
 
                 //only send request when email is found
