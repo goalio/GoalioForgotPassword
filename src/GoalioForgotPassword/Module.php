@@ -36,10 +36,12 @@ class Module {
                 'goalioforgotpassword_forgot_form' => function($sm) {
                     $options = $sm->get('goalioforgotpassword_module_options');
                     $form = new Form\Forgot(null, $options);
-                    $form->setInputFilter(new Form\ForgotFilter(new \ZfcUser\Validator\RecordExists(array(
+                    $validator = new \ZfcUser\Validator\RecordExists(array(
                             'mapper' => $sm->get('zfcuser_user_mapper'),
                             'key'    => 'email'
-                        )),$options));
+                    ));
+                    $validator->setMessage('The email address you entered was not found.');
+                    $form->setInputFilter(new Form\ForgotFilter($validator,$options));
                     return $form;
                 },
 
