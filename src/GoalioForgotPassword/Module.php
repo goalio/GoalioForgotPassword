@@ -21,7 +21,7 @@ class Module {
     }
 
     public function getModuleDependencies() {
-        return array('ZfcUser', 'ZfcCommon');   
+        return array('ZfcUser', 'ZfcBase');   
     }
 
     public function getServiceConfig() {
