@@ -2,7 +2,7 @@
 
 namespace GoalioForgotPassword\Form;
 
-use Zend\InputFilter\InputFilter;
+use ZfcBase\InputFilter\ProvidesEventsInputFilter as InputFilter;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
 class ResetFilter extends InputFilter
@@ -46,5 +46,7 @@ class ResetFilter extends InputFilter
                 array('name' => 'StringTrim'),
             ),
         ));
+
+		$this->getEventManager()->trigger('init', $this);
     }
 }
