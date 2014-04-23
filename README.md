@@ -1,7 +1,7 @@
 GoalioForgotPassword
 ====================
 
-Version 0.1.3 Created by the goalio UG (haftungsbeschränkt)
+Version 1.0.0 Created by the goalio UG (haftungsbeschränkt)
 
 Introduction
 ------------
@@ -39,11 +39,11 @@ Installation
 
     ```json
     "require": {
-        "goalio/goalio-forgotpassword": "0.*"
+        "goalio/goalio-forgotpassword": "1.*"
     }
     ```
 
-2. Now tell composer to download ZfcUser by running the command:
+2. Now tell composer to download GoalioForgotPassword by running the command:
 
     ```bash
     $ php composer.phar update

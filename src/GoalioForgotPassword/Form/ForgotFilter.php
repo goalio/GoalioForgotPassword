@@ -40,7 +40,7 @@ class ForgotFilter extends InputFilter
     /**
      * set options
      *
-     * @param RegistrationOptionsInterface $options
+     * @param ForgotOptionsInterface $options
      */
     public function setOptions(ForgotOptionsInterface $options)
     {
