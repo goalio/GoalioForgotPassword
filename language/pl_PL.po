@@ -1,0 +1,163 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ZfcUser\n"
+"Report-Msgid-Bugs-To: zf-devteam@zend.com\n"
+"POT-Creation-Date: 2014-04-12 16:57+0100\n"
+"PO-Revision-Date: 2014-04-12 16:57+0100\n"
+"Last-Translator: Stijnhau <stijnhau@gmail.com>\n"
+"Language-Team: ZF Contibutors <zf-devteam@zend.com>\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: language/msgIds.php:6
+msgid "Username"
+msgstr "Nazwa użytkownika"
+
+#: language/msgIds.php:7
+msgid "Email"
+msgstr "E-mail"
+
+#: language/msgIds.php:8
+msgid "New Email"
+msgstr "Nowy e-mail"
+
+#: language/msgIds.php:9
+msgid "Verify New Email"
+msgstr "Powtórz nowy e-mail"
+
+#: language/msgIds.php:10
+msgid "Display Name"
+msgstr "Nazwa wyświetlana"
+
+#: language/msgIds.php:11
+msgid "Password"
+msgstr "Hasło"
+
+#: language/msgIds.php:12
+msgid "Password Verify"
+msgstr "Powtórz hasło"
+
+#: language/msgIds.php:13
+msgid "Current Password"
+msgstr "Aktualne hasło"
+
+#: language/msgIds.php:14
+msgid "Verify New Password"
+msgstr "Powtórz nowe hasło"
+
+#: language/msgIds.php:15
+msgid "New Password"
+msgstr "Nowe hasło"
+
+#: language/msgIds.php:16
+msgid "Please type the following text"
+msgstr "Proszę przepisz następujący tekst"
+
+#: language/msgIds.php:17
+msgid "Submit"
+msgstr "Prześlij"
+
+#: language/msgIds.php:18 view/zfc-user/user/login.phtml:1
+msgid "Sign In"
+msgstr "Logowanie"
+
+#: language/msgIds.php:19
+msgid "Register"
+msgstr "Rejestracja"
+
+#: language/msgIds.php:20
+msgid "No record matching the input was found"
+msgstr "Nie znaleziono konta o podanym identyfikatorze"
+
+#: language/msgIds.php:21
+msgid "A record matching the input was found"
+msgstr "Konto o podanym identyfikatorze już istnieje"
+
+#: language/msgIds.php:22
+msgid "Authentication failed. Please try again."
+msgstr "Logowanie nie powiodło się. Proszę spróbuj ponownie."
+
+#: language/msgIds.php:23
+#, fuzzy
+msgid "Request new password"
+msgstr "Nowe hasło"
+
+#: language/msgIds.php:24
+#, fuzzy
+msgid "Set new password"
+msgstr "Nowe hasło"
+
+#: view/goalio-forgot-password/email/forgot.phtml:2
+msgid ""
+"You have received this email because you initiated to reset your password "
+"with us. To continue with the process, please click the link below:"
+msgstr ""
+
+#: view/goalio-forgot-password/forgot/forgot.phtml:1
+#: view/goalio-forgot-password/forgot/sent.phtml:1
+msgid "Forgot your password?"
+msgstr ""
+
+#: view/goalio-forgot-password/forgot/forgot.phtml:23
+#: view/goalio-forgot-password/forgot/passwordchanged.phtml:5
+msgid "Back to login."
+msgstr ""
+
+#: view/goalio-forgot-password/forgot/passwordchanged.phtml:1
+msgid "Your password has been changed."
+msgstr ""
+
+#: view/goalio-forgot-password/forgot/passwordchanged.phtml:3
+msgid "You can now login using your new password."
+msgstr ""
+
+#: view/goalio-forgot-password/forgot/reset.phtml:1
+#, php-format
+msgid "Change Password for %s"
+msgstr "Zmień hasło dla %s"
+
+#: view/goalio-forgot-password/forgot/sent.phtml:3
+#, php-format
+msgid "A reminder has been sent to your e-mail address %s."
+msgstr ""
+
+#: view/goalio-forgot-password/forgot/sent.phtml:5
+msgid "Back to login?"
+msgstr ""
+
+#: view/zfc-user/user/login.phtml:33
+msgid "Not registered?"
+msgstr "Nie posiadasz konta?"
+
+#: view/zfc-user/user/login.phtml:33
+msgid "Sign up!"
+msgstr "Zarejestruj się!"
+
+#~ msgid "Change Email for %s"
+#~ msgstr "Zmień e-mail dla %s"
+
+#~ msgid "Email address changed successfully."
+#~ msgstr "Pomyślnie zaktualizowano e-mail."
+
+#~ msgid "Unable to update your email address. Please try again."
+#~ msgstr ""
+#~ "Nie udało się zaktualizować Twojego adresu e-mail. Proszę spróbuj "
+#~ "ponownie."
+
+#~ msgid "Password changed successfully."
+#~ msgstr "Pomyślnie zmieniono hasło."
+
+#~ msgid "Unable to update your password. Please try again."
+#~ msgstr "Nie udało się zaktualizować Twojego hasła. Proszę spróbuj ponownie."
+
+#~ msgid "Hello"
+#~ msgstr "Witaj"
+
+#~ msgid "Sign Out"
+#~ msgstr "Wyloguj"

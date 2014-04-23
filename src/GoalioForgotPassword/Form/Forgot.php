@@ -21,7 +21,7 @@ class Forgot extends ProvidesEventsForm
         $this->add(array(
             'name' => 'email',
             'options' => array(
-                'label' => 'E-Mail',
+                'label' => 'Email',
             ),
         ));
 
