@@ -3,6 +3,7 @@ namespace GoalioForgotPassword;
 
 use Zend\Loader\StandardAutoloader;
 use Zend\Loader\AutoloaderFactory;
+use Zend\Mvc\ModuleRouteListener;
 
 class Module {
 

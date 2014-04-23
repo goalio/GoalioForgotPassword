@@ -1,4 +1,4 @@
-<h3>Change Password for <?php echo $this->escapeHtml($this->email); ?></h3>
+<h3><?php echo sprintf($this->translate('Change Password for %s'), $this->escapeHtml($this->email)); ?></h3>
 <?php
 
 $form = $this->resetForm;
