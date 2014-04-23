@@ -15,11 +15,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "goalio/goalio-mailservice": "0.*",
-        "zendframework/zendframework": "2.*",
-        "zf-commons/zfc-base": "0.*",
-        "zf-commons/zfc-user": "0.*"
+        "goalio/goalio-mailservice": "1.*",
+        "zf-commons/zfc-user": "1.*"
     },
     "autoload": {
         "psr-0": {
