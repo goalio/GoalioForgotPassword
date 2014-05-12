@@ -6,7 +6,7 @@ use GoalioForgotPassword\Form\ResetFilter;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\ServiceManager\FactoryInterface;
 
-class ForgotFactory implements FactoryInterface {
+class ResetFactory implements FactoryInterface {
 
     public function createService(ServiceLocatorInterface $serviceLocator) {
         $options = $serviceLocator->get('goalioforgotpassword_module_options');
