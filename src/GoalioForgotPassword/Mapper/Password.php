@@ -5,7 +5,7 @@ use ZfcBase\Mapper\AbstractDbMapper;
 use GoalioForgotPassword\Entity\Password as Model;
 use Zend\Db\Sql\Sql;
 
-class Password extends AbstractDbMapper
+class Password extends AbstractDbMapper implements PasswordMapperInterface
 {
     protected $tableName         = 'user_password_reset';
     protected $keyField          = 'request_key';
@@ -60,12 +60,12 @@ class Password extends AbstractDbMapper
         return true;
     }
 
-	public function findByUserIdRequestKey($userId, $token)
-	{
-		$select = $this->getSelect()
+    public function findByUserIdRequestKey($userId, $token)
+    {
+        $select = $this->getSelect()
                        ->where(array($this->userField => $userId, $this->keyField => $token));
         return $this->select($select)->current();
-	}
+    }
 
     protected function fromRow($row)
     {
