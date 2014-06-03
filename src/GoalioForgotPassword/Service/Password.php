@@ -13,7 +13,7 @@ use Zend\ServiceManager\ServiceManager;
 use Zend\ServiceManager\ServiceManagerAwareInterface;
 
 use ZfcUser\Mapper\UserInterface as UserMapperInterface;
-use GoalioForgotPassword\Mapper\Password as PasswordMapper;
+use GoalioForgotPassword\Mapper\PasswordMapperInterface as PasswordMapperInterface;
 
 use Zend\Crypt\Password\Bcrypt;
 use Zend\Form\Form;
@@ -68,6 +68,7 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
         $model = new $class;
         $model->setUserId($userId);
         $model->setRequestTime(new \DateTime('now'));
+
         $model->generateRequestKey();
         $this->getEventManager()->trigger(__FUNCTION__, $this, array('record' => $model, 'userId' => $userId));
         $this->getPasswordMapper()->persist($model);
@@ -142,7 +143,7 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
         return $this;
     }
 
-    public function setPasswordMapper(PasswordMapper $passwordMapper)
+    public function setPasswordMapper(PasswordMapperInterface $passwordMapper)
     {
         $this->passwordMapper = $passwordMapper;
         return $this;
