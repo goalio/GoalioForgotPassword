@@ -87,8 +87,6 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
         $message = $mailService->createTextMessage($from, $to, $subject, $template, array('record' => $model));
 
         $mailService->send($message);
-
-        die('mail sent');
     }
 
     public function resetPassword($password, $user, array $data)
