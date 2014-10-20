@@ -20,6 +20,11 @@ class ForgotFilter extends InputFilter
         $this->add(array(
             'name'       => 'email',
             'required'   => true,
+            'filters' => array(
+                array(
+                    'name' => 'StringTrim',
+                ),
+            ),
             'validators' => array(
                 array(
                     'name' => 'EmailAddress'
