@@ -24,18 +24,16 @@ class Password extends AbstractDbMapper
 
     public function findByUserId($userId)
     {
-        $select = $this->select()
-                       ->from($this->tableName)
+        $select = $this->getSelect()
                        ->where(array($this->userField => $userId));
-        return $this->selectWith($select)->current();
+        return $this->select($select)->current();
     }
 
     public function findByRequestKey($key)
     {
-        $select = $this->select()
-                       ->from($this->tableName)
+        $select = $this->getSelect()
                        ->where(array($this->keyField => $key));
-        return $this->selectWith($select)->current();
+        return $this->select($select)->current();
     }
 
     public function cleanExpiredForgotRequests($expiryTime=86400)
