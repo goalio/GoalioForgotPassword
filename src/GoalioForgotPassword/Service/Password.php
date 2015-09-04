@@ -45,8 +45,8 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
 
     public function cleanExpiredForgotRequests()
     {
-        // TODO: reset expiry time from options
-        return $this->getPasswordMapper()->cleanExpiredForgotRequests();
+        $expireOption = $this->getOptions()->getResetExpire();
+        return $this->getPasswordMapper()->cleanExpiredForgotRequests($expireOption);
     }
 
     public function cleanPriorForgotRequests($userId)
