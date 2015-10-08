@@ -2,6 +2,7 @@
 
 namespace GoalioForgotPassword\Service;
 
+use GoalioMailService\Mail\Service\Message;
 use Zend\Mail\Transport\TransportInterface;
 
 use ZfcUser\Options\PasswordOptionsInterface;
@@ -77,13 +78,22 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
 
     public function sendForgotEmailMessage($to, $model)
     {
+        /** @var Message $mailService */
         $mailService = $this->getServiceManager()->get('goaliomailservice_message');
 
         $from = $this->getOptions()->getEmailFromAddress();
         $subject = $this->getOptions()->getResetEmailSubjectLine();
         $template = $this->getOptions()->getResetEmailTemplate();
 
-        $message = $mailService->createTextMessage($from, $to, $subject, $template, array('record' => $model));
+        switch($this->getOptions()->getEmailFormat()) {
+            case "html":
+                $message = $mailService->createHtmlMessage($from, $to, $subject, $template, array('record' => $model));
+            break;
+            case "text":
+            default:
+                $message = $mailService->createTextMessage($from, $to, $subject, $template, array('record' => $model));
+            break;
+        }
 
         $mailService->send($message);
     }
