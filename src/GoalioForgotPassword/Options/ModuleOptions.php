@@ -36,6 +36,11 @@ class ModuleOptions extends AbstractOptions implements
      * @var int
      */
     protected $resetExpire = 86400;
+
+    /**
+     * @var string
+     */
+    protected $emailFormat = 'text';
     
     /**
      * @var bool
@@ -117,5 +122,21 @@ class ModuleOptions extends AbstractOptions implements
 
 	public function getResetExpire() {
         return $this->resetExpire;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmailFormat() {
+        return $this->emailFormat;
+    }
+
+    /**
+     * @param string $emailFormat
+     * @return $this
+     */
+    public function setEmailFormat($emailFormat) {
+        $this->emailFormat = $emailFormat;
+        return $this;
     }
 }
