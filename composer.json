@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "goalio/goalio-mailservice": "1.*",
+        "goalio/goalio-mailservice": "2.*",
         "zf-commons/zfc-user": "3.*"
     },
     "autoload": {
