@@ -2,25 +2,17 @@
 
 namespace GoalioForgotPassword\Service;
 
-use Zend\Mail\Transport\TransportInterface;
-
 use ZfcUser\Options\PasswordOptionsInterface;
 
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
-
-use Zend\ServiceManager\ServiceManager;
-
-use Zend\ServiceManager\ServiceManagerAwareInterface;
 
 use ZfcUser\Mapper\UserInterface as UserMapperInterface;
 use GoalioForgotPassword\Mapper\Password as PasswordMapper;
 
 use Zend\Crypt\Password\Bcrypt;
-use Zend\Form\Form;
-
 use ZfcBase\EventManager\EventProvider;
 
-class Password extends EventProvider implements ServiceManagerAwareInterface
+class Password extends EventProvider
 {
     /**
      * @var ModelMapper
@@ -31,7 +23,16 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
     protected $options;
     protected $zfcUserOptions;
     protected $emailRenderer;
-    protected $emailTransport;
+    protected $mailservice;
+
+    public function __construct($options, $passwordMapper, $userMapper, $mailservice, $zfcUserOptions)
+    {
+        $this->options = $options;
+        $this->passwordMapper = $passwordMapper;
+        $this->userMapper = $userMapper;
+        $this->mailservice = $mailservice;
+        $this->zfcUserOptions = $zfcUserOptions;
+    }
 
     public function findByRequestKey($token)
     {
@@ -77,7 +78,7 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
 
     public function sendForgotEmailMessage($to, $model)
     {
-        $mailService = $this->getServiceManager()->get('goaliomailservice_message');
+        $mailService = $this->mailservice;
 
         $from = $this->getOptions()->getEmailFromAddress();
         $subject = $this->getOptions()->getResetEmailSubjectLine();
@@ -106,17 +107,6 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
         return true;
     }
 
-    public function getServiceManager()
-    {
-        return $this->serviceManager;
-    }
-
-    public function setServiceManager(ServiceManager $serviceManager)
-    {
-        $this->serviceManager = $serviceManager;
-        return $this;
-    }
-
     /**
      * getUserMapper
      *
@@ -124,9 +114,6 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
      */
     public function getUserMapper()
     {
-        if (null === $this->userMapper) {
-            $this->userMapper = $this->getServiceManager()->get('zfcuser_user_mapper');
-        }
         return $this->userMapper;
     }
 
@@ -150,10 +137,6 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
 
     public function getPasswordMapper()
     {
-        if (null === $this->passwordMapper) {
-            $this->setPasswordMapper($this->getServiceManager()->get('goalioforgotpassword_password_mapper'));
-        }
-
         return $this->passwordMapper;
     }
 
@@ -163,26 +146,8 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
         return $this;
     }
 
-    public function getMessageTransport()
-    {
-        if (!$this->emailTransport instanceof TransportInterface) {
-            $this->setEmailTransport($this->getServiceManager()->get('goalioforgotpassword_email_transport'));
-        }
-
-        return $this->emailTransport;
-    }
-
-    public function setMessageTransport(EmailTransport $emailTransport)
-    {
-        $this->emailTransport = $emailTransport;
-        return $this;
-    }
-
     public function getOptions()
     {
-        if (!$this->options instanceof ForgotOptionsInterface) {
-            $this->setOptions($this->getServiceManager()->get('goalioforgotpassword_module_options'));
-        }
         return $this->options;
     }
 
@@ -194,9 +159,6 @@ class Password extends EventProvider implements ServiceManagerAwareInterface
 
     public function getZfcUserOptions()
     {
-        if (!$this->zfcUserOptions instanceof PasswordOptionsInterface) {
-            $this->setZfcUserOptions($this->getServiceManager()->get('zfcuser_module_options'));
-        }
         return $this->zfcUserOptions;
     }
 
