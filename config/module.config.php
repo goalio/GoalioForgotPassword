@@ -9,8 +9,8 @@ return array(
         ),
     ),
     'controllers' => array(
-        'invokables' => array(
-            'goalioforgotpassword_forgot' => 'GoalioForgotPassword\Controller\ForgotController',
+        'factories' => array(
+            'goalioforgotpassword_forgot' => 'GoalioForgotPassword\Factory\Controller\ForgotControllerFactory',
         ),
     ),
 
