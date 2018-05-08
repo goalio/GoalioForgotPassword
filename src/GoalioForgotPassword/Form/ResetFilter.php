@@ -47,6 +47,5 @@ class ResetFilter extends InputFilter
             ),
         ));
 
-		$this->getEventManager()->trigger('init', $this);
     }
 }
