@@ -50,7 +50,6 @@ class Reset extends ProvidesEventsForm
             'priority' => -100,
         ));
 
-        $this->getEventManager()->trigger('init', $this);
     }
 
     public function setForgotOptions(ForgotOptionsInterface $forgotOptions)
