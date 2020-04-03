@@ -2,8 +2,8 @@
 namespace GoalioForgotPassword\Options\Service;
 
 use GoalioForgotPassword\Options\ModuleOptions;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
 
 class ModuleOptionsFactory implements FactoryInterface {
 

@@ -3,8 +3,8 @@ namespace GoalioForgotPassword\Form\Service;
 
 use GoalioForgotPassword\Form\Forgot;
 use GoalioForgotPassword\Form\ForgotFilter;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
 
 class ForgotFactory implements FactoryInterface {
 

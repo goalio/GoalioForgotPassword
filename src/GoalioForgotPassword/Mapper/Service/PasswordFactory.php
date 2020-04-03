@@ -3,8 +3,8 @@ namespace GoalioForgotPassword\Mapper\Service;
 
 use GoalioForgotPassword\Mapper\Password;
 use GoalioForgotPassword\Mapper\PasswordHydrator;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
 use Interop\Container\ContainerInterface;
 
 class PasswordFactory implements FactoryInterface {

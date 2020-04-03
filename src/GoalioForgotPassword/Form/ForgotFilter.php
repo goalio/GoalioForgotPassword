@@ -2,7 +2,7 @@
 
 namespace GoalioForgotPassword\Form;
 
-use Zend\InputFilter\InputFilter;
+use Laminas\InputFilter\InputFilter;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
 class ForgotFilter extends InputFilter

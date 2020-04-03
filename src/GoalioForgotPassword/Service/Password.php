@@ -9,7 +9,7 @@ use GoalioForgotPassword\Options\ForgotOptionsInterface;
 use ZfcUser\Mapper\UserInterface as UserMapperInterface;
 use GoalioForgotPassword\Mapper\Password as PasswordMapper;
 
-use Zend\Crypt\Password\Bcrypt;
+use Laminas\Crypt\Password\Bcrypt;
 use ZfcBase\EventManager\EventProvider;
 
 class Password extends EventProvider

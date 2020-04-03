@@ -2,7 +2,7 @@
 
 namespace GoalioForgotPassword\Form;
 
-use Zend\Form\Element;
+use Laminas\Form\Element;
 use ZfcBase\Form\ProvidesEventsForm;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
