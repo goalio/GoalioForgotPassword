@@ -3,8 +3,8 @@ namespace GoalioForgotPassword\Form\Service;
 
 use GoalioForgotPassword\Form\Reset;
 use GoalioForgotPassword\Form\ResetFilter;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\FactoryInterface;
 
 class ResetFactory implements FactoryInterface {
 

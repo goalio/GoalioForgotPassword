@@ -1,9 +1,9 @@
 <?php
 namespace GoalioForgotPassword;
 
-use Zend\Loader\StandardAutoloader;
-use Zend\Loader\AutoloaderFactory;
-use Zend\Mvc\ModuleRouteListener;
+use Laminas\Loader\StandardAutoloader;
+use Laminas\Loader\AutoloaderFactory;
+use Laminas\Mvc\ModuleRouteListener;
 
 class Module {
 

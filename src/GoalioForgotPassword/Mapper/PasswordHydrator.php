@@ -2,7 +2,7 @@
 
 namespace GoalioForgotPassword\Mapper;
 
-use Zend\Hydrator\ClassMethods;
+use Laminas\Hydrator\ClassMethods;
 use GoalioForgotPassword\Entity\Password as Entity;
 
 class PasswordHydrator extends ClassMethods

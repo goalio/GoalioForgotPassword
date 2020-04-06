@@ -2,11 +2,11 @@
 
 namespace GoalioForgotPassword\Controller;
 
-use Zend\Form\Form;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Stdlib\ResponseInterface as Response;
-use Zend\Stdlib\Parameters;
-use Zend\View\Model\ViewModel;
+use Laminas\Form\Form;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\Stdlib\ResponseInterface as Response;
+use Laminas\Stdlib\Parameters;
+use Laminas\View\Model\ViewModel;
 use GoalioForgotPassword\Service\Password as PasswordService;
 use GoalioForgotPassword\Options\ForgotControllerOptionsInterface;
 
