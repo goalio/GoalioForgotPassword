@@ -10,9 +10,8 @@ use ZfcUser\Mapper\UserInterface as UserMapperInterface;
 use GoalioForgotPassword\Mapper\Password as PasswordMapper;
 
 use Laminas\Crypt\Password\Bcrypt;
-use ZfcBase\EventManager\EventProvider;
 
-class Password extends EventProvider
+class Password
 {
     /**
      * @var ModelMapper
@@ -70,7 +69,6 @@ class Password extends EventProvider
         $model->setUserId($userId);
         $model->setRequestTime(new \DateTime('now'));
         $model->generateRequestKey();
-        $this->getEventManager()->trigger(__FUNCTION__, $this, array('record' => $model, 'userId' => $userId));
         $this->getPasswordMapper()->persist($model);
 
         $this->sendForgotEmailMessage($email, $model);
@@ -99,10 +97,8 @@ class Password extends EventProvider
         $pass = $bcrypt->create($newPass);
         $user->setPassword($pass);
 
-        $this->getEventManager()->trigger(__FUNCTION__, $this, array('user' => $user));
         $this->getUserMapper()->update($user);
         $this->remove($password);
-        $this->getEventManager()->trigger(__FUNCTION__.'.post', $this, array('user' => $user));
 
         return true;
     }

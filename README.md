@@ -17,8 +17,7 @@ can be a little slow because we are a small company with only two developers. I 
 Requirements
 ------------
 
-* [Zend Framework 2](https://github.com/zendframework/zf2) (latest master).
-* [ZfcBase](https://github.com/ZF-Commons/ZfcBase) (latest master).
+* [Laminas]() (latest master).
 * [ZfcUser](https://github.com/ZF-Commons/ZfcUser) (latest master).
 * [GoalioMailService](https://github.com/goalio/GoalioMailService) (latest master).
 
@@ -58,7 +57,6 @@ Installation
     return array(
         'modules' => array(
             // ...
-            'ZfcBase',
             'ZfcUser',
             'GoalioMailService',
             'GoalioForgotPassword'

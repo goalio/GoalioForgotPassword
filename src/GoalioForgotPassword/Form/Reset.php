@@ -4,10 +4,9 @@ namespace GoalioForgotPassword\Form;
 
 use Laminas\Form\Form;
 use Laminas\Form\Element;
-use ZfcBase\Form\ProvidesEventsForm;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
-class Reset extends ProvidesEventsForm
+class Reset extends Form
 {
     /**
      * @var ForgotOptionsInterface

@@ -1,7 +1,7 @@
 <?php
 namespace GoalioForgotPassword\Mapper;
 
-use ZfcBase\Mapper\AbstractDbMapper;
+use GoalioForgotPassword\Mapper\AbstractDbMapper;
 use GoalioForgotPassword\Entity\Password as Model;
 use Laminas\Db\Sql\Sql;
 
