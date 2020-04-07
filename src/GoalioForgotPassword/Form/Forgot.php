@@ -3,10 +3,10 @@
 namespace GoalioForgotPassword\Form;
 
 use Laminas\Form\Element;
-use ZfcBase\Form\ProvidesEventsForm;
+use Laminas\Form\Form;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
-class Forgot extends ProvidesEventsForm
+class Forgot extends Form
 {
     /**
      * @var AuthenticationOptionsInterface
