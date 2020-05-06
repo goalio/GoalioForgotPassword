@@ -1,9 +1,9 @@
 <?php
 namespace GoalioForgotPassword\Mapper;
 
-use ZfcBase\Mapper\AbstractDbMapper;
+use GoalioForgotPassword\Mapper\AbstractDbMapper;
 use GoalioForgotPassword\Entity\Password as Model;
-use Zend\Db\Sql\Sql;
+use Laminas\Db\Sql\Sql;
 
 class Password extends AbstractDbMapper
 {

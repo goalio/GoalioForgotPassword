@@ -2,7 +2,7 @@
 
 namespace GoalioForgotPassword\Options;
 
-use Zend\Stdlib\AbstractOptions;
+use Laminas\Stdlib\AbstractOptions;
 
 class ModuleOptions extends AbstractOptions implements
     ForgotOptionsInterface
@@ -25,7 +25,7 @@ class ModuleOptions extends AbstractOptions implements
     /**
      * @var string
      */
-    protected $emailTransport = 'Zend\Mail\Transport\Sendmail';
+    protected $emailTransport = 'Laminas\Mail\Transport\Sendmail';
 
     /**
      * @var string
