@@ -12,6 +12,8 @@ class ForgotFilter extends InputFilter
      */
     protected $options;
 
+    protected $emailValidator;
+
     public function __construct( $emailValidator, ForgotOptionsInterface $options)
     {
         $this->setOptions($options);
