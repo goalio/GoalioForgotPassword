@@ -2,7 +2,7 @@
 
 namespace GoalioForgotPassword\Form;
 
-use Zend\InputFilter\InputFilter;
+use Laminas\InputFilter\InputFilter;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
 class ForgotFilter extends InputFilter
@@ -11,6 +11,8 @@ class ForgotFilter extends InputFilter
      * @var ForgotOptionsInterface
      */
     protected $options;
+
+    protected $emailValidator;
 
     public function __construct( $emailValidator, ForgotOptionsInterface $options)
     {

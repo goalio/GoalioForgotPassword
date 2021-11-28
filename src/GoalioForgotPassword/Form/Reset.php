@@ -2,12 +2,11 @@
 
 namespace GoalioForgotPassword\Form;
 
-use Zend\Form\Form;
-use Zend\Form\Element;
-use ZfcBase\Form\ProvidesEventsForm;
+use Laminas\Form\Form;
+use Laminas\Form\Element;
 use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
-class Reset extends ProvidesEventsForm
+class Reset extends Form
 {
     /**
      * @var ForgotOptionsInterface
@@ -50,7 +49,6 @@ class Reset extends ProvidesEventsForm
             'priority' => -100,
         ));
 
-        $this->getEventManager()->trigger('init', $this);
     }
 
     public function setForgotOptions(ForgotOptionsInterface $forgotOptions)
