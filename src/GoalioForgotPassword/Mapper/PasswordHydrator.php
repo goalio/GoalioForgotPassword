@@ -2,10 +2,11 @@
 
 namespace GoalioForgotPassword\Mapper;
 
-use Laminas\Hydrator\ClassMethods;
+//use Laminas\Hydrator\ClassMethods;
+use Laminas\Hydrator\ClassMethodsHydrator;
 use GoalioForgotPassword\Entity\Password as Entity;
 
-class PasswordHydrator extends ClassMethods
+class PasswordHydrator extends ClassMethodsHydrator
 {
     /**
      * Extract values from an object
