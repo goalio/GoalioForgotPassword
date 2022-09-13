@@ -13,7 +13,7 @@ class Forgot extends Form
      */
     protected $forgotOptions;
 
-    public function __construct($name = null, ForgotOptionsInterface $options)
+    public function __construct($name, ForgotOptionsInterface $options)
     {
         $this->setForgotOptions($options);
         parent::__construct($name);
