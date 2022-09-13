@@ -13,7 +13,7 @@ class Reset extends Form
      */
     protected $forgotOptions;
 
-    public function __construct($name = null, ForgotOptionsInterface $forgotOptions)
+    public function __construct($name, ForgotOptionsInterface $forgotOptions)
     {
         $this->setForgotOptions($forgotOptions);
         parent::__construct($name);
