@@ -7,8 +7,10 @@ use GoalioForgotPassword\Options\ForgotOptionsInterface;
 
 class ResetFilter extends InputFilter
 {
-    public function __construct(ForgotOptionsInterface $options)
+    protected $passwordValidator;
+    public function __construct(ForgotOptionsInterface $options, $passwordValidator, $config)
     {
+        $this->passwordValidator = $passwordValidator;
         $this->add(array(
             'name'       => 'newCredential',
             'required'   => true,
@@ -16,9 +18,10 @@ class ResetFilter extends InputFilter
                 array(
                     'name'    => 'StringLength',
                     'options' => array(
-                        'min' => 6,
+                        'min' => $config['minPasswordLength'],
                     ),
                 ),
+                $this->passwordValidator,
             ),
             'filters'   => array(
                 array('name' => 'StringTrim'),
@@ -32,7 +35,7 @@ class ResetFilter extends InputFilter
                 array(
                     'name'    => 'StringLength',
                     'options' => array(
-                        'min' => 6,
+                        'min' => $config['minPasswordLength'],
                     ),
                 ),
                 array(
@@ -41,6 +44,7 @@ class ResetFilter extends InputFilter
                         'token' => 'newCredential'
                     )
                 ),
+                $this->passwordValidator,
             ),
             'filters'   => array(
                 array('name' => 'StringTrim'),
