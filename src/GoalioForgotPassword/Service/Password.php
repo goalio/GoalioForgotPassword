@@ -10,8 +10,9 @@ use ZfcUser\Mapper\UserInterface as UserMapperInterface;
 use GoalioForgotPassword\Mapper\Password as PasswordMapper;
 
 use Laminas\Crypt\Password\Bcrypt;
+use ZfcUser\EventManager\EventProvider;
 
-class Password
+class Password extends EventProvider
 {
     /**
      * @var ModelMapper
@@ -78,11 +79,12 @@ class Password
     {
         $mailService = $this->mailservice;
 
+        $resetExpire = $this->getOptions()->getResetExpire();
         $from = $this->getOptions()->getEmailFromAddress();
         $subject = $this->getOptions()->getResetEmailSubjectLine();
         $template = $this->getOptions()->getResetEmailTemplate();
 
-        $message = $mailService->createTextMessage($from, $to, $subject, $template, array('record' => $model));
+        $message = $mailService->createHtmlMessage($from, $to, $subject, $template, ['record' => $model, 'userEmail' => $to, 'resetExpire' => $resetExpire]);
 
         $mailService->send($message);
     }
@@ -98,6 +100,8 @@ class Password
         $user->setPassword($pass);
 
         $this->getUserMapper()->update($user);
+        // trigger reset password event
+        $this->getEventManager()->trigger(__FUNCTION__, $this, ['user' => $user]);
         $this->remove($password);
 
         return true;
